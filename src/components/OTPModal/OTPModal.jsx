@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { toast } from "react-toastify";
 import "./otpmodal.css";
 
@@ -15,20 +15,10 @@ const OTPModal = ({ token, onVerified, onClose }) => {
   const inputRefs               = useRef([]);
   const hasSentRef              = useRef(false); // ← prevents StrictMode double-call
 
-  useEffect(() => {
-    // StrictMode fires effects twice — guard with ref
-    if (hasSentRef.current) return;
-    hasSentRef.current = true;
-    sendOtp();
-  }, []);
-
-  useEffect(() => {
-    if (timer <= 0) { setCanResend(true); return; }
-    const t = setTimeout(() => setTimer(p => p - 1), 1000);
-    return () => clearTimeout(t);
-  }, [timer]);
-
-  const sendOtp = async () => {
+  // Wrapped in useCallback so it has a stable identity across renders.
+  // This lets us safely list it as a useEffect dependency without
+  // triggering re-sends — hasSentRef still guards the "only once on mount" logic.
+  const sendOtp = useCallback(async () => {
     setSent(false);
     setOtpDisplay("");
     try {
@@ -58,7 +48,20 @@ const OTPModal = ({ token, onVerified, onClose }) => {
     } catch {
       toast.error("Failed to send OTP. Please try again.");
     }
-  };
+  }, [token]);
+
+  useEffect(() => {
+    // StrictMode fires effects twice — guard with ref
+    if (hasSentRef.current) return;
+    hasSentRef.current = true;
+    sendOtp();
+  }, [sendOtp]);
+
+  useEffect(() => {
+    if (timer <= 0) { setCanResend(true); return; }
+    const t = setTimeout(() => setTimer(p => p - 1), 1000);
+    return () => clearTimeout(t);
+  }, [timer]);
 
   const handleResend = () => {
     hasSentRef.current = true; // keep guard active

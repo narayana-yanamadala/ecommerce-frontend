@@ -24,7 +24,7 @@ const Checkout = () => {
   const navigate       = useNavigate();
   const dispatch       = useDispatch();
   const { cartList }   = useSelector(s => s.cart);
-  const { addresses, addAddress } = useAddress(user?.token);
+  const { addresses }  = useAddress(user?.token);
 
   const [selectedAddr,  setSelectedAddr]  = useState(null);
   const [payMethod,     setPayMethod]     = useState("razorpay");
@@ -48,7 +48,7 @@ const Checkout = () => {
       const def = addresses.find(a => a.is_default) || addresses[0];
       setSelectedAddr(def);
     }
-  }, [addresses]);
+  }, [addresses, selectedAddr]);
 
   // Pricing
   const subtotal      = cartList.reduce((s, i) => s + i.price * i.qty, 0);

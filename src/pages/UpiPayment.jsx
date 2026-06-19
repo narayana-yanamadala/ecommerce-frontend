@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleteProduct } from "../app/features/cart/cartSlice";
 import { toast } from "react-toastify";
 import "./upipayment.css";
@@ -12,7 +12,6 @@ const UpiPayment = () => {
   const navigate   = useNavigate();
   const location   = useLocation();
   const dispatch   = useDispatch();
-  const { cartList } = useSelector((state) => state.cart);
 
   const amount   = location.state?.amount   || 0;
   const items    = location.state?.cartList || [];
