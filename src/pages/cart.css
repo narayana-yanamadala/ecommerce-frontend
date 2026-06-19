@@ -1,0 +1,8 @@
+.empty-cart { text-align: center; padding: 80px 20px; color: #888; }
+.empty-cart h2 { color: #333; font-size: 24px; margin: 16px 0 8px; }
+.shop-now-btn { background: #0f3460; color: #fff; border: none; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.shop-now-btn:hover { background: #e94560; }
+.payment-section { display: flex; flex-direction: column; gap: 10px; }
+.checkout-proceed-btn { width: 100%; padding: 14px; background: #0f3460; color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+.checkout-proceed-btn:hover { background: #e94560; }
+.secure-text { text-align: center; font-size: 11px; color: #aaa; }

@@ -1,0 +1,69 @@
+footer {
+  background-color: #0f3460;
+  padding: 80px 0;
+  color: #fff;
+}
+
+footer .box {
+  padding: 0 20px;
+}
+
+footer h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 800;
+  width: max-content;
+}
+
+footer .logo {
+  color: white;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  margin-bottom: 20px;
+}
+footer h2 {
+  font-size: 20px;
+}
+
+footer .row {
+  justify-content: center;
+}
+
+footer p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+footer h2 {
+  margin-bottom: 20px;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+.footer-social { display: flex; gap: 12px; margin-top: 12px; }
+.footer-social ion-icon { font-size: 20px; cursor: pointer; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+.footer-social ion-icon:hover { color: #fff; }
+
+.footer-payment { margin-top: 14px; }
+.footer-payment span { font-size: 12px; color: rgba(255,255,255,0.6); display: block; margin-bottom: 6px; }
+.pay-icons { display: flex; gap: 6px; flex-wrap: wrap; }
+.pay-icons span {
+  background: rgba(255,255,255,0.1); color: #fff;
+  font-size: 11px; padding: 3px 10px;
+  border-radius: 4px; border: 1px solid rgba(255,255,255,0.2);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 0 0; text-align: center;
+  font-size: 13px; color: rgba(255,255,255,0.5);
+  margin-top: 24px;
+}
