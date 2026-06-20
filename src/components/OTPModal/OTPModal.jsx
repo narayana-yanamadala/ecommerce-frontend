@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { toast } from "react-toastify";
 import "./otpmodal.css";
 
-const API = "http://127.0.0.1:8000/api/checkout";
+const API = "https://ecommerce-backend-y36c.onrender.com/api/checkout";
 
 const OTPModal = ({ token, onVerified, onClose }) => {
   const [otp, setOtp]           = useState(["","","","","",""]);

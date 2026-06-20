@@ -20,7 +20,7 @@ const NavBar = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://127.0.0.1:8000/api/auth/logout/", {
+      await fetch("https://ecommerce-backend-y36c.onrender.com/api/auth/logout/", {
         method: "POST",
         headers: { Authorization: `Token ${user.token}` },
       });

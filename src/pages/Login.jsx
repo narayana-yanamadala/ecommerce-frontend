@@ -18,7 +18,7 @@ const Login = () => {
     if (!form.username || !form.password) { toast.error("Please fill in all fields."); return; }
     setLoading(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/auth/login/", {
+      const res = await fetch("https://ecommerce-backend-y36c.onrender.com/api/auth/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

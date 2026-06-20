@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-const API = "http://127.0.0.1:8000/api/checkout";
+const API = "https://ecommerce-backend-y36c.onrender.com/api/checkout";
 
 export const useAddress = (token) => {
   const [addresses, setAddresses] = useState([]);

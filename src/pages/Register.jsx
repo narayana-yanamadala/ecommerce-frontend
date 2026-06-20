@@ -20,7 +20,7 @@ const Register = () => {
     if (form.password.length < 6) { toast.error("Password must be at least 6 characters."); return; }
     setLoading(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/auth/register/", {
+      const res = await fetch("https://ecommerce-backend-y36c.onrender.com/api/auth/register/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: form.username, email: form.email, password: form.password }),

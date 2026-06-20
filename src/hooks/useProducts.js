@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API = "http://127.0.0.1:8000/api/store";
+const API = "https://ecommerce-backend-y36c.onrender.com/api/store";
 
 export const useProducts = (category = "") => {
   const [products, setProducts]   = useState([]);

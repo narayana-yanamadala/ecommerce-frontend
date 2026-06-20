@@ -10,7 +10,7 @@ import OTPModal from "../components/OTPModal/OTPModal";
 import { toast } from "react-toastify";
 import "./checkout.css";
 
-const API = "http://127.0.0.1:8000/api/checkout";
+const API = "https://ecommerce-backend-y36c.onrender.com/api/checkout";
 
 const PAYMENT_METHODS = [
   { id: "razorpay", label: "Razorpay", icon: "💳", desc: "Cards, UPI, Netbanking" },
